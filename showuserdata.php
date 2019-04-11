@@ -40,7 +40,7 @@ if(isset($_POST['search']))
 function filterTable($query)
 {
     include("config.inc.php");
- $conn = mysqli_connect($server, $username, $password);
+ $conn = mysqli_connect($server, $username, $password,'Daily_Report_Interns');
     $filter_Result = mysqli_query($conn, $query);
     return $filter_Result;
 }

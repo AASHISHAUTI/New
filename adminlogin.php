@@ -11,7 +11,8 @@ if(isset($_POST['submit'])){
  }
  else
  {
- $conn = mysqli_connect("localhost", "root", "");
+	 include("config.inc.php");
+ $conn = mysqli_connect($server, $username, $password);
   $user=mysqli_real_escape_string($conn, $_POST['user']);
  $pass=mysqli_real_escape_string($conn, $_POST['pass']);
  #$user=$_POST['user'];

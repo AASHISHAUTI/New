@@ -32,7 +32,7 @@ select{width: 15.5em}
 	<select name="Name">
 		<?php
 		include("config.inc.php");
- $conn = mysqli_connect($server, $username, $password,'Daily_Intern_Reports');
+ $conn = mysqli_connect($server, $username, $password,'Daily_Report_Interns');
 		if(!$conn)
 		{
 			die('Connection failed!'.mysqli_error($conn));
@@ -59,7 +59,7 @@ select{width: 15.5em}
 <label>Date:</label></td><td>
  <input type="text" id="datepicker" name="dt">
  <td>
-
+<label>Time:-</label>
 <input type="text" value="<?php
 date_default_timezone_set('Asia/Calcutta');
 $current_time=date('h:i:s:a');

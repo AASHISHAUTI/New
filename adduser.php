@@ -4,13 +4,14 @@ $_SESSION['user'];
 ?>
 <html>
 <head>
+	<link rel="stylesheet" href="Des.css">
 	<title>Add User Form</title>
 </head>
 <body bgcolor="cyan">
 <center>
 	<h2>New User Registration</h2></center>
 	<center>
-<form action="userregdata.php" method="POST"> 
+<form action="userregdata.php" method="POST">
 <table>
 <tr>
 <td>
@@ -45,4 +46,3 @@ $_SESSION['user'];
 		?>
 
 </center></body></html>
-

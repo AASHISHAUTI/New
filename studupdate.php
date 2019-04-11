@@ -1,5 +1,7 @@
 <?php
-$conn = mysqli_connect('127.0.0.1','root','root','Daily_Report_Interns');
+echo '<link rel="stylesheet" href="Des.css">';
+
+$conn = mysqli_connect('127.0.0.1','root','','Daily_Report_Interns');
 if(!$conn)
 {
 	die('Connection failed!'.mysqli_error($conn));
@@ -21,12 +23,3 @@ else
 }
 echo '<a href="choose.php"><h2 align = "center">Back</h2></a>';
 ?>
-
-
-
-
-
-
-		
- 
-       

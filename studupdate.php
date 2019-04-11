@@ -1,7 +1,7 @@
 <?php
 echo '<link rel="stylesheet" href="Des.css">';
-
-$conn = mysqli_connect('127.0.0.1','root','','Daily_Report_Interns');
+include("config.inc.php");
+ $conn = mysqli_connect($server, $username, $password,'Daily_Intern_Reports');
 if(!$conn)
 {
 	die('Connection failed!'.mysqli_error($conn));

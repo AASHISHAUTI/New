@@ -8,9 +8,10 @@ select{width: 15.5em}
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <link rel="stylesheet" href="jquery/jquery-ui.css">
-  <link rel="stylesheet" href="jquery/style.css">
+	<link rel="stylesheet" href="Des.css">
+	<link rel="stylesheet" href="Vis.css">
+  <link rel="stylesheet" href="JQuery/jquery-ui.css">
+  <link rel="stylesheet" href="JQuery/style.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script>
@@ -30,7 +31,7 @@ select{width: 15.5em}
 <td>
 	<select name="Name">
 		<?php
-		$conn = mysqli_connect('127.0.0.1','root','root','Daily_Report_Interns');
+		$conn = mysqli_connect('127.0.0.1','root','','Daily_Report_Interns');
 		if(!$conn)
 		{
 			die('Connection failed!'.mysqli_error($conn));
@@ -56,13 +57,13 @@ select{width: 15.5em}
 <p><td>
 <label>Date:</label></td><td>
  <input type="text" id="datepicker" name="dt">
-<label>Time:-</label>
-<input type="text" value="<?php 
+ <td>
+
+<input type="text" value="<?php
 date_default_timezone_set('Asia/Calcutta');
 $current_time=date('h:i:s:a');
-echo $current_time;?>" name="CTime">
-
-
+echo $current_time;?>" name="CTime" ID="Ctime">
+</td>
 
 </td></p>
 </tr>
@@ -80,5 +81,5 @@ echo $current_time;?>" name="CTime">
 </p></tr>
 </tr>
 </form></table></div></CENTER>
-<a href="Choose.php"><h2 align = "center">Back to Home Page</h2></a>
+<a href="choose.php"><h2 align = "center">Back to Home Page</h2></a>
 </body></html>

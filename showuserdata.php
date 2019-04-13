@@ -84,7 +84,7 @@ if(isset($_SESSION['user'])){
 <?php
 }
 else {
-	echo"<script>location.href='adminlogin.php'</script>";
+	echo"<script>location.href='choose.php'</script>";
 }
 
 ?>

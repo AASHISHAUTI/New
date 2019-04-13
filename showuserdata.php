@@ -40,31 +40,15 @@ if(isset($_POST['search']))
 function filterTable($query)
 {
     include("config.inc.php");
- $conn = mysqli_connect($server, $username, $password,'Daily_Report_Interns');
-    $filter_Result = mysqli_query($conn, $query);
+    $connect = mysqli_connect($server, $username, $password,'Daily_Report_Interns');
+
+    $filter_Result = mysqli_query($connect, $query);
     return $filter_Result;
 }
-
-?>
-
-
-
-
-
-	<link rel="stylesheet" href="Des.css"
-
-
-
+session_start();
+if(isset($_SESSION['user'])){
+	echo '<link rel="stylesheet" href="Des.css"
   </head>
-
-
-
-
-
-
-
-
-
     <body><center>
 
         <form action="showuserdata.php" method="post">
@@ -80,13 +64,14 @@ function filterTable($query)
                      <th>Message</th>
                 </tr>
 
-      
+'
+?>
                 <?php while($row = mysqli_fetch_array($search_result)):?>
                 <tr>
-                    <td><?php echo $row['name'];?></td>
-                    <td><?php echo $row['dt'];?></td>
-                    <td><?php echo $row['CTime'];?></td>
-                    <td><?php echo $row['message'];?></td>
+                    <td><?php echo $row["name"];?></td>
+                    <td><?php echo $row["dt"];?></td>
+                    <td><?php echo $row["CTime"];?></td>
+                    <td><?php echo $row["message"];?></td>
 
                 </tr>
                 <?php endwhile;?>
@@ -94,7 +79,17 @@ function filterTable($query)
         </form>
         </center>
 
-    </body>
+    </body>';
+
+<?php
+}
+else {
+	echo"<script>location.href='adminlogin.php'</script>";
+}
+
+?>
+
+
     <?php
 echo '<a href="adminmain.php"><h2 align = "center">Back</h2></a>';
     ?>

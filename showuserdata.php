@@ -79,7 +79,7 @@ if(isset($_SESSION['user'])){
         </form>
         </center>
 
-    </body>';
+    </body>
 
 <?php
 }

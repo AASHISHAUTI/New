@@ -13,7 +13,7 @@ $date = $_POST['dt'];
 $time= $_POST['CTime'];
 $message = $_POST['message'];
 
-$mysql = "INSERT INTO studup(name,dt,ctime,message) VALUES('$name','$date','$time','$message')";
+$mysql = "INSERT INTO studup(name,dt,CTime,message) VALUES('$name','$date','$time','$message')";
 
 if(mysqli_query($conn,$mysql))
 {

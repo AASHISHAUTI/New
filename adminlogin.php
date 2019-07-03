@@ -4,46 +4,48 @@
 </html>
 <?php
 session_start();
-$error=''; 
+$error='';
 if(isset($_POST['submit'])){
  if(empty($_POST['user']) || empty($_POST['pass'])){
  $error = "Username or Password is Invalid";
  }
  else
  {
- $conn = mysqli_connect("localhost", "root", "root");
+	 include("config.inc.php");
+ $conn = mysqli_connect($server, $username, $password);
   $user=mysqli_real_escape_string($conn, $_POST['user']);
  $pass=mysqli_real_escape_string($conn, $_POST['pass']);
  #$user=$_POST['user'];
  #$pass=$_POST['pass'];
- 
+
 
 
  $db = mysqli_select_db($conn, "Daily_Report_Interns");
- 
+
  $query = mysqli_query($conn, "SELECT * FROM admin WHERE name='$user' AND password='$pass'");
- 
- 
- 
- 
+
+
+
+
  $rows = mysqli_num_rows($query);
  if($rows == 1){
 $_SESSION['user'] = $user;
- header("Location: adminmain.php"); 
+ header("Location: adminmain.php");
  }
  else
  {
  $error = "Username of Password is Invalid";
  }
- mysqli_close($conn); 
+ mysqli_close($conn);
  }
 }
- 
+
 
 
 echo '<html>';
 echo '<head>';
 echo '<title>Login</title>';
+echo '<link rel="stylesheet" href="Des.css">';
 echo '<style>';
 echo '.login{';
 echo 'width:360px;';
@@ -78,7 +80,7 @@ echo '}';
 echo '</style>';
 echo '</head>';
 echo '<body>';
-echo '<div class="login">'; 
+echo '<div class="login">';
 echo '<h1 align="center">Login</h1>';
 echo '<form action="" method="post" style="text-align:center;">';
 echo '<input placeholder="Username" type="text"  name="user"><br/><br/>';
@@ -91,5 +93,5 @@ echo '</body>';
 echo '</html>';
 
 
-			
+
       ?>

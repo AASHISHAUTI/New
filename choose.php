@@ -4,14 +4,15 @@ echo '<html>';
 echo '<head>';
 echo '<title>Pristine</title>';
 echo '<style>';
+echo 'link rel="stylesheet" href="Des.css"';
 echo '.home{';
 echo '   width:360px;';
 echo '         margin:50px auto;';
 echo '         font-family:arial; ';
-echo '         color: #168DA0;';
+
 echo '         border-radius:10px;';
 echo '         padding:12px 40px 25px;';
-echo '         margin-top:70px; 
+echo '         margin-top:70px;
 			}
 			   button{
                width:100%;
@@ -32,7 +33,7 @@ echo '   <div class="home"> ';
 		<button onclick="location.href = 'adminlogin.php';" id="myButton" class="float-left submit-button" >Admin Login</button>
 
 <?php
-         
+
 echo '      </body>';
 echo '      </html>';
 ?>
@@ -40,7 +41,7 @@ echo '      </html>';
 <head>
 	<title></title>
 </head>
-<body bgcolor="cyan">
+
 
 </body>
 </html>
